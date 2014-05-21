@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Xavier and Magneto's Reading Room</title>
+<%= stylesheet_link_tag "default" %>
+<%= stylesheet_link_tag "scaffold" %>
+<%= stylesheet_link_tag "application" %>
+</head>
+<body>
+<h1 id="header">Xavier and Magneto's Reading Room</h1>
+<ul id="menu">
+<li><%= link_to_unless_current "Editoras", :controller => "labels" %></li>
+<li><%= link_to_unless_current "Títulos", :controller => "titles" %></li>
+<li><%= link_to_unless_current "Tamanhos", :controller => "sizes" %></li>
+<li><%= link_to_unless_current "Edicoes", :controller => "comics" %></li>
+</ul>
+<div id="contents"><%= yield %></div>
+</body>
+</html>

@@ -16,7 +16,18 @@
   </thead>
 
   <tbody>
-    <% @comics.each do |comic| %>
+  	<tr>
+        <td></td>
+        <td></td>
+        <td><%= select(:filter, "size",Size.all.collect {|s| [ s.name, s.id ] }, {include_blank: 'Selecione'}) %></td>
+        <td><%= select(:filter, "title",Title.all.collect {|t| [ t.name, t.id ] }, {include_blank: 'Selecione'}) %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% @filterer.results.each do |comic| %>
       <tr>
         <td><%= comic.number %></td>
         <td><%= comic.name %></td>
@@ -33,5 +44,6 @@
 </table>
 
 <br>
+
 
 <%= link_to 'New Comic', new_comic_path %>

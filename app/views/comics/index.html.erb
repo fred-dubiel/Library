@@ -45,9 +45,16 @@
 
 <br>
 <script javascript>
-    $("#filter[size]").change(function(){
-        console.log('teste');
-    });
+    $(function() {
+  $('#filter_title').change(function(){
+  	window.location = "?title="+$(this).val();
+  	
+  });
+  $('#filter_size').change(function(){
+  	window.location = "?size="+$(this).val();
+  	
+  });
+});
 </script>
 
 
